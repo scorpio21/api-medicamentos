@@ -1,0 +1,146 @@
+### API para Control de Medicamentos - Ejemplos de Uso
+
+### 1. Obtener todos los medicamentos
+GET http://localhost:8000/api/v1/medications
+Content-Type: application/json
+
+### 2. Obtener medicamentos con paginación
+GET http://localhost:8000/api/v1/medications?limit=5&offset=0
+Content-Type: application/json
+
+### 3. Obtener medicamento por ID
+GET http://localhost:8000/api/v1/medications/1
+Content-Type: application/json
+
+### 4. Crear nuevo medicamento
+POST http://localhost:8000/api/v1/medications
+Content-Type: application/json
+
+{
+  "name": "Aspirina 100mg",
+  "description": "Analgésico y antiagregante plaquetario para el alivio del dolor y la prevención de eventos cardiovasculares",
+  "active_ingredient": "Ácido acetilsalicílico",
+  "dosage_form": "Tableta",
+  "strength": "100mg",
+  "manufacturer": "Genérico",
+  "batch_number": "BATCH011",
+  "expiry_date": "2026-12-31",
+  "quantity": 200,
+  "storage_conditions": "Almacenar en lugar seco y fresco, protegido de la luz"
+}
+
+### 5. Actualizar medicamento completo
+PUT http://localhost:8000/api/v1/medications/1
+Content-Type: application/json
+
+{
+  "name": "Paracetamol 500mg Actualizado",
+  "description": "Analgésico y antipirético para el alivio del dolor y la fiebre - Versión actualizada",
+  "active_ingredient": "Paracetamol",
+  "dosage_form": "Tableta",
+  "strength": "500mg",
+  "manufacturer": "Genérico Plus",
+  "batch_number": "BATCH001",
+  "expiry_date": "2025-12-31",
+  "quantity": 175,
+  "storage_conditions": "Almacenar en lugar seco y fresco, protegido de la luz, temperatura ambiente"
+}
+
+### 6. Actualizar solo la cantidad
+PATCH http://localhost:8000/api/v1/medications/1/quantity
+Content-Type: application/json
+
+{
+  "quantity": 125
+}
+
+### 7. Buscar medicamentos
+GET http://localhost:8000/api/v1/medications/search?q=paracetamol
+Content-Type: application/json
+
+### 8. Buscar por ingrediente activo
+GET http://localhost:8000/api/v1/medications/search?q=ibuprofeno
+Content-Type: application/json
+
+### 9. Obtener medicamentos próximos a vencer (30 días por defecto)
+GET http://localhost:8000/api/v1/medications/expiring-soon
+Content-Type: application/json
+
+### 10. Obtener medicamentos próximos a vencer (60 días)
+GET http://localhost:8000/api/v1/medications/expiring-soon?days=60
+Content-Type: application/json
+
+### 11. Obtener medicamentos con stock bajo (10 por defecto)
+GET http://localhost:8000/api/v1/medications/low-stock
+Content-Type: application/json
+
+### 12. Obtener medicamentos con stock bajo (umbral personalizado)
+GET http://localhost:8000/api/v1/medications/low-stock?threshold=50
+Content-Type: application/json
+
+### 13. Eliminar medicamento
+DELETE http://localhost:8000/api/v1/medications/1
+Content-Type: application/json
+
+### 14. Crear medicamento con datos mínimos
+POST http://localhost:8000/api/v1/medications
+Content-Type: application/json
+
+{
+  "name": "Vitamina C 500mg",
+  "active_ingredient": "Ácido ascórbico",
+  "batch_number": "BATCH012",
+  "expiry_date": "2026-06-30",
+  "quantity": 100
+}
+
+### 15. Crear medicamento con datos completos
+POST http://localhost:8000/api/v1/medications
+Content-Type: application/json
+
+{
+  "name": "Metformina 850mg",
+  "description": "Antidiabético oral para el control de la diabetes tipo 2, mejora la sensibilidad a la insulina",
+  "active_ingredient": "Metformina",
+  "dosage_form": "Tableta",
+  "strength": "850mg",
+  "manufacturer": "Genérico Premium",
+  "batch_number": "BATCH013",
+  "expiry_date": "2026-03-15",
+  "quantity": 150,
+  "storage_conditions": "Almacenar en lugar seco y fresco, protegido de la luz, temperatura ambiente (15-30°C)"
+}
+
+### 16. Crear medicamento líquido
+POST http://localhost:8000/api/v1/medications
+Content-Type: application/json
+
+{
+  "name": "Jarabe para la tos",
+  "description": "Antitusivo para el alivio de la tos seca e irritativa",
+  "active_ingredient": "Dextrometorfano",
+  "dosage_form": "Jarabe",
+  "strength": "15mg/5ml",
+  "manufacturer": "Genérico",
+  "batch_number": "BATCH014",
+  "expiry_date": "2025-08-30",
+  "quantity": 80,
+  "storage_conditions": "Almacenar en lugar fresco, protegido de la luz, no congelar"
+}
+
+### 17. Crear medicamento inyectable
+POST http://localhost:8000/api/v1/medications
+Content-Type: application/json
+
+{
+  "name": "Insulina Regular",
+  "description": "Insulina de acción rápida para el control de la glucemia en pacientes diabéticos",
+  "active_ingredient": "Insulina humana",
+  "dosage_form": "Solución inyectable",
+  "strength": "100 UI/ml",
+  "manufacturer": "Genérico",
+  "batch_number": "BATCH015",
+  "expiry_date": "2025-05-15",
+  "quantity": 200,
+  "storage_conditions": "Refrigerar entre 2-8°C, no congelar, proteger de la luz"
+}
