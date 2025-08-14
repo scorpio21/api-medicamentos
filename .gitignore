@@ -1,3 +1,7 @@
+/vendor/
+/var/*.sqlite
+/.env
+
 # Dependencias
 /vendor/
 /node_modules/
