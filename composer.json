@@ -1,4 +1,10 @@
 {
+    "name": "medicamentos-api",
+    "description": "API REST para control de medicamentos",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+
     "name": "api/medicamentos",
     "description": "API para control de medicamentos con Slim 4 y SQLite",
     "type": "project",
@@ -35,6 +41,10 @@
             "App\\": "src/"
         }
     },
+
+    "config": {
+        "optimize-autoloader": true
+
 
     "scripts": {
 
