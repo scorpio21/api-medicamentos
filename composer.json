@@ -13,10 +13,22 @@
         "slim/slim": "^4.12",
         "slim/psr7": "^1.6"
 
+
     "name": "medication-control/api",
     "description": "API para el control de medicamentos",
     "type": "project",
     "require": {
+9
+        "php": ">=7.4",
+        "slim/slim": "^4.0",
+        "slim/psr7": "^1.5",
+        "php-di/php-di": "^6.4",
+        "vlucas/phpdotenv": "^5.4",
+        "firebase/php-jwt": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+
         "php": ">=8.0",
         "firebase/php-jwt": "^6.0",
         "vlucas/phpdotenv": "^5.0",
@@ -32,6 +44,9 @@
 
     "config": {
         "optimize-autoloader": true
+
+
+    "scripts": {
 
 
     "scripts": {
