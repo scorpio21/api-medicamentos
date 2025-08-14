@@ -1,3 +1,55 @@
 /vendor/
 /var/*.sqlite
 /.env
+
+# Dependencias
+/vendor/
+/node_modules/
+
+# Archivos de entorno
+.env
+.env.local
+.env.production
+
+# Logs
+/logs/*
+!logs/.gitkeep
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache
+*.cache
+
+# Archivos de configuración local
+config.local.php
+database.local.php
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de test
+/tests/coverage/
+.phpunit.result.cache
+
+# Archivos de sesión
+/sessions/
+
+# Archivos de upload
+/uploads/
+
+# Archivos de cache de Composer
+composer.lock
